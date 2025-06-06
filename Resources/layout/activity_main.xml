@@ -18,7 +18,11 @@
 		android:layout_height="wrap_content"
 		/>
 	
-	<EditText
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<EditText
 		android:id="@+id/incomePerHourEditText"
 		android:layout_marginRight="20dp"
 		android:layout_marginLeft="20dp"
@@ -27,8 +31,14 @@
 		android:hint="$ Per Hour"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"/>
+	
+	</com.google.android.material.textfield.TextInputLayout>
+	
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
 
-	<EditText
+		<EditText
 		android:id="@+id/wordHoursEditText"
 		android:layout_marginRight="20dp"
 		android:layout_marginLeft="20dp"
@@ -37,8 +47,14 @@
 		android:hint="Work Hours Per Day"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"/>
+	
+	</com.google.android.material.textfield.TextInputLayout>
 
-	<EditText
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<EditText
 		android:id="@+id/taxRateEditText"
 		android:layout_marginRight="20dp"
 		android:layout_marginLeft="20dp"
@@ -48,15 +64,23 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"/>
 
-	<EditText
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<EditText
 		android:id="@+id/savingsRateEditText"
 		android:layout_marginRight="20dp"
 		android:layout_marginLeft="20dp"
 		android:inputType="number"
-		android:imeOptions="actionNext"
+		android:imeOptions="actionDone"
 		android:hint="Savings Rate (%)"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"/>
+
+	</com.google.android.material.textfield.TextInputLayout>
 	
 	<Button
 		android:id="@+id/calculateButton"
