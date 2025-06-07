@@ -4125,7 +4125,7 @@ namespace IncomePlannerXamarin
 			public const int withText = 2131230967;
 			
 			// aapt resource value: 0x7F0800F8
-			public const int wordHoursEditText = 2131230968;
+			public const int workHoursEditText = 2131230968;
 			
 			// aapt resource value: 0x7F0800F9
 			public const int workSummaryTextView = 2131230969;

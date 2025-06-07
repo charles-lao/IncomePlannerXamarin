@@ -52,7 +52,7 @@
 				android:layout_height="wrap_content">
 
 				<EditText
-				android:id="@+id/wordHoursEditText"
+				android:id="@+id/workHoursEditText"
 				android:layout_marginRight="20dp"
 				android:layout_marginLeft="20dp"
 				android:inputType="number"
