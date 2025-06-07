@@ -48,6 +48,33 @@ namespace IncomePlannerXamarin
 
             calculateButton = (Button)FindViewById(Resource.Id.calculateButton);
             resultLayout = (RelativeLayout)FindViewById(Resource.Id.resultLayout);
+
+            calculateButton.Click += CalculateButton_Click;
+        }
+
+        private void CalculateButton_Click(object sender, System.EventArgs e)
+        {
+            // Take inputs from user
+            double incomePerHour = double.Parse(incomePerHourEditText.Text);
+            double workHourPerDay = double.Parse(workHourPerDayEditText.Text);
+            double taxRate = double.Parse(taxRateEditText.Text);
+            double savingsRate = double.Parse(savingRateEditText.Text);
+
+            // Calculate Annual Income, Tax and Savings
+            double annualWorkHourSummary = workHourPerDay * 5 * 50; // There are 52 wWeeks in a year, let's assume the user will take a two week off
+            double annualIncome = incomePerHour * workHourPerDay * 5 * 50;
+            double taxPayable = (taxRate / 100) * annualIncome;
+            double annualSavings = (savingsRate / 100) * annualIncome;
+            double spendableIncome = annualIncome - annualSavings - taxPayable;
+
+            // Display results of the calculation
+            grossIncomeTextView.Text = annualIncome.ToString() + " NZD";
+            workSummaryTextView.Text = annualWorkHourSummary.ToString() + " HRS";
+            taxPayableTextView.Text = taxPayable.ToString() + " NZD";
+            annualSavingsTextView.Text = annualSavings.ToString() + " NZD";
+            spendableIncomeTextView.Text = spendableIncome.ToString() + " NZD";
+
+            resultLayout.Visibility = Android.Views.ViewStates.Visible;
         }
     }
 }
