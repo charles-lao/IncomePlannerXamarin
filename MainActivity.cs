@@ -24,6 +24,8 @@ namespace IncomePlannerXamarin
         Button calculateButton;
         RelativeLayout resultLayout;
 
+        bool inputCalculated = false;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -54,6 +56,14 @@ namespace IncomePlannerXamarin
 
         private void CalculateButton_Click(object sender, System.EventArgs e)
         {
+            if (inputCalculated)
+            {
+                inputCalculated = false;
+                calculateButton.Text = "Calculate";
+                ClearInput();
+                return;
+            }
+
             // Take inputs from user
             double incomePerHour = double.Parse(incomePerHourEditText.Text);
             double workHourPerDay = double.Parse(workHourPerDayEditText.Text);
@@ -68,13 +78,25 @@ namespace IncomePlannerXamarin
             double spendableIncome = annualIncome - annualSavings - taxPayable;
 
             // Display results of the calculation
-            grossIncomeTextView.Text = annualIncome.ToString() + " NZD";
-            workSummaryTextView.Text = annualWorkHourSummary.ToString() + " HRS";
-            taxPayableTextView.Text = taxPayable.ToString() + " NZD";
-            annualSavingsTextView.Text = annualSavings.ToString() + " NZD";
-            spendableIncomeTextView.Text = spendableIncome.ToString() + " NZD";
+            grossIncomeTextView.Text = annualIncome.ToString("#,##") + " NZD";
+            workSummaryTextView.Text = annualWorkHourSummary.ToString("#,##") + " HRS";
+            taxPayableTextView.Text = taxPayable.ToString("#,##") + " NZD";
+            annualSavingsTextView.Text = annualSavings.ToString("#,##") + " NZD";
+            spendableIncomeTextView.Text = spendableIncome.ToString("#,##") + " NZD";
 
             resultLayout.Visibility = Android.Views.ViewStates.Visible;
+            inputCalculated = true;
+            calculateButton.Text = "Clear";
+        }
+
+        void ClearInput()
+        {
+            incomePerHourEditText.Text = "";
+            workHourPerDayEditText.Text = "";
+            taxRateEditText.Text = "";
+            savingRateEditText.Text = "";
+
+            resultLayout.Visibility = Android.Views.ViewStates.Invisible;
         }
     }
 }
