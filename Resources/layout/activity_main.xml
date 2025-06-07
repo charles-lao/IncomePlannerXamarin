@@ -21,15 +21,15 @@
 			android:layout_height="match_parent">
 
 			<TextView
-		android:text="Input Values Accordingly"
-		android:textSize="22sp"
-		android:textStyle="bold"
-		android:gravity="center"
-		android:layout_marginTop="16dp"
-		android:layout_marginBottom="20dp"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		/>
+				android:text="Input Values Accordingly"
+				android:textSize="22sp"
+				android:textStyle="bold"
+				android:gravity="center"
+				android:layout_marginTop="16dp"
+				android:layout_marginBottom="20dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				/>
 
 			<com.google.android.material.textfield.TextInputLayout
 				android:layout_width="match_parent"
@@ -102,6 +102,110 @@
 				android:layout_gravity="center_horizontal"
 				android:layout_width="300dp"
 				android:layout_height="50dp"/>
+			
+			<RelativeLayout
+				android:id="@+id/resultLayout"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:layout_marginTop="30dp"
+				android:layout_marginBottom="30dp"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<!-- Annual Work Summary -->
+				
+				<TextView
+					android:id="@+id/workSummaryTitle"
+					android:layout_alignParentLeft="true"
+					android:text="Annual Work Summary"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+				
+				<TextView
+					android:id="@+id/workSummaryTextView"
+					android:layout_alignParentRight="true"
+					android:text="0 HRS"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+
+				<!-- Annual Gross Income -->
+				
+				<TextView
+					android:id="@+id/grossIncomeTitle"
+					android:layout_marginTop="10dp"
+					android:layout_below="@+id/workSummaryTitle"
+					android:text="Annual Gross Income"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+				
+				<TextView
+					android:id="@+id/grossIncomeTextView"
+					android:layout_marginTop="10dp"
+					android:layout_below="@+id/workSummaryTextView"
+					android:layout_alignParentRight="true"
+					android:text="54000 USD"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+
+				<!-- Annual Tax Payable -->
+				
+				<TextView
+					android:layout_marginTop="10dp"
+					android:id="@+id/annualTaxPayableTitle"
+					android:layout_below="@+id/grossIncomeTitle"
+					android:text="Annual Tax Payable"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+				
+				<TextView	
+					android:id="@+id/annualTaxPayableTextView"
+					android:layout_marginTop="10dp"
+					android:layout_below="@+id/grossIncomeTextView"
+					android:layout_alignParentRight="true"
+					android:text="0 USD"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+
+				<!-- Annual Savings -->
+				
+				<TextView
+					android:id="@+id/annualSavingsTitle"
+					android:layout_below="@+id/annualTaxPayableTitle"
+					android:text="Annual Savings"
+					android:layout_marginTop="10dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+				
+				<TextView
+					android:id="@+id/annualSavingsTextView"
+					android:layout_alignParentRight="true"
+					android:layout_below="@+id/annualTaxPayableTextView"
+					android:text="0 USD"
+					android:layout_marginTop="10dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+
+				<!-- Spendable Income -->
+
+				<TextView
+					android:id="@+id/spendableIncomeTitle"
+					android:layout_below="@+id/annualSavingsTitle"
+					android:text="Spendable Income"
+					android:layout_marginTop="10dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+
+				<TextView
+					android:id="@+id/spendableIncomeTextView"
+					android:layout_alignParentRight="true"
+					android:layout_below="@+id/annualSavingsTextView"
+					android:text="0 USD"
+					android:layout_marginTop="10dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+				
+				
+			</RelativeLayout>
 			
 		</LinearLayout>
 		
